@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply p-4 rounded-lg mb-4 max-w-4xl;
+  }
+  
+  .user-message {
+    @apply bg-primary-500 text-white ml-auto;
+  }
+  
+  .assistant-message {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  .chat-input {
+    @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .upload-area {
+    @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary-500 transition-colors;
+  }
+}
