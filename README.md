@@ -46,6 +46,8 @@ This RAG Chat Application combines the power of large language models with your 
 
 ## 🏗️ Architecture
 
+### System Overview
+
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Frontend      │    │   Backend       │    │   Database      │
@@ -64,6 +66,86 @@ This RAG Chat Application combines the power of large language models with your 
                        │ • Embeddings    │
                        └─────────────────┘
 ```
+
+### RAG Pipeline: Text-to-Embeddings-to-Response Flow
+
+The following diagram illustrates the complete journey of how English text gets converted to embeddings, processed through the RAG system, and returned as contextually aware responses:
+
+```mermaid
+graph TD
+    A["👤 User Input<br/>(English Text)"] --> B["🔄 Text Preprocessing<br/>• Tokenization<br/>• Cleaning<br/>• Chunking"]
+    
+    B --> C["🤖 OpenAI Embedding API<br/>text-embedding-ada-002<br/>1536 dimensions"]
+    
+    C --> D["📊 Query Vector<br/>(Numerical Embeddings)"]
+    
+    D --> E["🔍 Couchbase Vector Search<br/>• Cosine Similarity<br/>• K-Nearest Neighbors<br/>• Semantic Matching"]
+    
+    E --> F["📚 Document Store<br/>Couchbase Database<br/>• Documents<br/>• Pre-computed Embeddings<br/>• Metadata"]
+    
+    F --> G["📄 Retrieved Documents<br/>• Relevant Chunks<br/>• Similarity Scores<br/>• Context Window"]
+    
+    G --> H["🧠 Context Assembly<br/>• Combine Query + Documents<br/>• Format for LLM<br/>• Add Instructions"]
+    
+    H --> I["🚀 OpenAI GPT API<br/>GPT-4 / GPT-3.5-turbo<br/>• Context Understanding<br/>• Response Generation"]
+    
+    I --> J["📝 Generated Response<br/>(English Text)<br/>• Contextually Aware<br/>• Source-grounded"]
+    
+    J --> K["👤 User Receives Answer<br/>(English Text)"]
+    
+    %% Document Ingestion Flow
+    L["📄 Document Upload<br/>PDF, Text, URL"] --> M["🔧 Content Extraction<br/>• PDF Parse<br/>• Web Scraping<br/>• Text Processing"]
+    
+    M --> N["✂️ Text Chunking<br/>• Split into segments<br/>• Overlap handling<br/>• Size optimization"]
+    
+    N --> O["🤖 Generate Embeddings<br/>OpenAI API<br/>text-embedding-ada-002"]
+    
+    O --> P["💾 Store in Couchbase<br/>• Document chunks<br/>• Vector embeddings<br/>• Metadata indexing"]
+    
+    P --> F
+    
+    %% Styling
+    classDef userInput fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef processing fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef embedding fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef database fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef llm fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef output fill:#e0f2f1,stroke:#004d40,stroke-width:2px
+    
+    class A,K userInput
+    class B,H,M,N processing
+    class C,D,O embedding
+    class E,F,P database
+    class I llm
+    class G,J output
+```
+
+### 🔄 Detailed Process Flow
+
+#### **1. Query Processing Pipeline**
+1. **User Input** → English text question or query
+2. **Text Preprocessing** → Clean and prepare text for embedding
+3. **Embedding Generation** → Convert to 1536-dimensional vector using OpenAI
+4. **Vector Search** → Find semantically similar documents in Couchbase
+5. **Context Retrieval** → Get relevant document chunks with similarity scores
+6. **Context Assembly** → Combine query with retrieved context
+7. **LLM Processing** → Generate contextually aware response using GPT
+8. **Response Delivery** → Return English text answer to user
+
+#### **2. Document Ingestion Pipeline**
+1. **Document Upload** → PDF, text files, or web URLs
+2. **Content Extraction** → Parse and extract text content
+3. **Text Chunking** → Split into manageable segments with overlap
+4. **Embedding Generation** → Create vector representations
+5. **Database Storage** → Store documents and embeddings in Couchbase
+
+#### **3. Key Technical Components**
+
+- **Embedding Model**: `text-embedding-ada-002` (1536 dimensions)
+- **Vector Search**: Cosine similarity with configurable K-nearest neighbors
+- **LLM Models**: GPT-4 or GPT-3.5-turbo for response generation
+- **Database**: Couchbase with vector indexing capabilities
+- **Chunking Strategy**: Overlapping text segments for context preservation
 
 ## 🎯 Use Cases
 
