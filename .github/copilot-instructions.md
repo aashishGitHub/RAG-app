@@ -1,2 +1,2 @@
 
-follow instructions from `./instructions/CPUI.instructions.md`
+follow instructions from `.github/instructions/CPUI.instructions.md`
