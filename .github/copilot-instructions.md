@@ -8,7 +8,7 @@ applyTo: "**"
 applyTo: "**/*.ts,**/*.tsx"
 ---
 # UI Code Instructions
-
+Always provide review comments in French
 ## Project Overview
 
 This is a **Retrieval-Augmented Generation (RAG) Chat Application** that combines large language models with vector search capabilities. Users can upload documents (PDFs, web pages) and have intelligent conversations about the content. The application uses Couchbase for vector storage, OpenAI for embeddings and chat completions, and provides a modern chat interface built with Next.js.
