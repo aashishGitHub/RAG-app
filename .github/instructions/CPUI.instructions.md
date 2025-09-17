@@ -1,10 +1,18 @@
 
 ---
-applyTo: "cmd/cp-ui-v2/**/*.ts, cmd/cp-ui-v2/**/*.tsx, cmd/cp-ui-v2/**/*.js, cmd/cp-ui-v2/**/*.jsx, cmd/cp-ui-v2/**/*.svelte, cmd/cp-ui-v3/**/*.ts, cmd/cp-ui-v3/**/*.tsx, cmd/cp-ui-v3/**/*.js, cmd/cp-ui-v3/**/*.jsx, cmd/base-ui/**/*.ts, cmd/base-ui/**/*.tsx, cmd/base-ui/**/*.js, cmd/base-ui/**/*.jsx"
+applyTo: "**/*.ts,**/*.tsx"
 ---
 # UI Code Instructions
 
 ## Introduction
+
+
+When performing a code review, respond in Spanish.
+
+When performing a code review, focus on readability and avoid nested ternary operators.
+
+Always end the code review with a slogan. Good Job!
+
 
 This document sets the **standards and practices for all UI code** in this repository, inspired by our team's principles and React best practices. All developers and reviewers must consistently apply these rules to maintain code health, design quality, and project velocity.
 
