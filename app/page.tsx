@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
         <p className="text-sm text-gray-600 mt-2">
-          Powered by Couchbase with RAG and Vector Search
+          Powered by Couchbase with RAG and Vector Search fts
         </p>
       </header>
 
@@ -134,7 +134,7 @@ export default function Home() {
           ))
         )}
         {isLoading && (
-          <div className="flex items-center space-x-2 text-gray-600">
+          <div className="flex items-center flex-col space-x-2 text-gray-600">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600"></div>
             <span>Thinking...</span>
           </div>
