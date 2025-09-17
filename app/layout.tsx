@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'RAG Chat Application',
-  description: 'A POC chat application using RAG and vector search with Couchbase',
+  description: 'A PoC chat application using RAG and vector search with Couchbase',
 }
 
 export default function RootLayout({

@@ -20,7 +20,7 @@ export default function FileUpload({ onClose }: FileUploadProps) {
       setFile(selectedFile);
       setMessage('');
     } else {
-      setMessage("Testing! select a valid PDF file.");
+      setMessage("Select a valid PDF file.");
     }
   };
 
