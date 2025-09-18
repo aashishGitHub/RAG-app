@@ -1,5 +1,9 @@
 ---
-applyTo: "**/*.js,**/*.jsx,**/*.ts,**/*.tsx"
+applyTo:
+  - "**/*.js"
+  - "**/*.jsx"
+  - "**/*.ts"
+  - "**/*.tsx"
 ---
 
 # JavaScript/TypeScript Code Review Instructions
