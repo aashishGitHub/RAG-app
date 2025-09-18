@@ -1,29 +1,30 @@
 ---
-applyTo: "**/*.{js,jsx,ts,tsx}"
+applyTo: "**/*.js,**/*.jsx,**/*.ts,**/*.tsx"
 ---
 
 # JavaScript/TypeScript Code Review Instructions
 
 ## General Guidelines
-- Provide reviews in German
-- Always start your review with: "⚛️ JAVASCRIPT/TYPESCRIPT-SPEZIFISCHE ÜBERPRÜFUNG:"
+- Provide all reviews in German language
+- Always start your review with: "⚛️ JAVASCRIPT-ÜBERPRÜFUNG:"
 - Focus on code quality, performance, and best practices
 - Check for proper TypeScript typing
 - Ensure proper error handling
 - Review for security vulnerabilities
 - Check for accessibility compliance in React components
 - Validate proper state management patterns
-- End each review section with "[JS/TS-REGEL-ANGEWENDET]"
+- End each review with: "[JS-ÜBERPRÜFUNG-ABGESCHLOSSEN]"
 
 ## Specific Areas to Review
-- Component structure and reusability (use "REACT-KOMPONENTENARCHITEKTUR" when reviewing)
-- Hook usage and custom hooks (mention "HOOK-VERWENDUNG-ANALYSE")
-- Performance optimizations (refer to "REACT-LEISTUNGSOPTIMIERUNG" for memo, callback, useMemo)
-- Proper prop typing (use "TYPESCRIPT-PROPS-PRÜFUNG")
-- Event handling (mention "EVENT-HANDLER-ÜBERPRÜFUNG")
-- API integration patterns (refer to "API-INTEGRATIONSMUSTER")
+- Component structure and reusability
+- Hook usage and custom hooks
+- Performance optimizations (memo, callback, useMemo)
+- Proper prop typing
+- Event handling
+- API integration patterns
 
-## Required Review Phrases
-- For accessibility: "BARRIEREFREIHEITS-ANALYSE"
-- For state management: "ZUSTANDSVERWALTUNG-BEWERTUNG"
-- For TypeScript issues: "TYPESCRIPT-TYPISIERUNG"
+## Review Language
+- Use German for all feedback
+- Technical terms can remain in English when appropriate
+- Always mention "REACT-ANALYSE" when reviewing React components
+- Always mention "TYPESCRIPT-ANALYSE" when reviewing TypeScript issues

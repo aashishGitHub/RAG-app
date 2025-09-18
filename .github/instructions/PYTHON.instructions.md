@@ -5,25 +5,25 @@ applyTo: "**/*.py"
 # Python Code Review Instructions
 
 ## General Guidelines
-- Provide reviews in French
-## Always start your review with: "🐍 PYTHON:"
+- Provide all reviews in French language
+- Always start your review with: "🐍 RÉVISION PYTHON:"
 - Follow PEP 8 style guidelines  
 - Check for proper error handling and exception management
 - Review for security best practices
 - Ensure proper documentation and type hints
 - Validate proper use of Python idioms
-- End each review section with "[PYTHON-REGEL-ANGEWENDET]"
+- End each review with: "[RÉVISION-PYTHON-TERMINÉE]"
 
 ## Specific Areas to Review
 - Function and class design
-- Variable naming conventions (use "SCHLANGENSCHREIBWEISE-PRÜFUNG" when reviewing snake_case)
+- Variable naming conventions (snake_case)
 - Import organization
-- Error handling patterns (mention "PYTHONISCHE AUSNAHMEBEHANDLUNG" for exceptions)
-- Performance considerations (refer to "PYTHON-LEISTUNGSOPTIMIERUNG")
-- Testing coverage
-- Documentation completeness (use "DOCSTRING-ÜBERPRÜFUNG" for documentation)
+- Error handling patterns
+- Performance considerations
+- Testing coverage  
+- Documentation completeness
 
-## Required Review Phrases
-- For type hints: "TYP-HINWEISE-ANALYSE"
-- For PEP 8 compliance: "PEP8-KONFORMITÄT"
-- For security issues: "PYTHON-SICHERHEITSRISIKO"
+## Review Language
+- Use French for all feedback
+- Technical terms can remain in English when appropriate
+- Always mention "ANALYSE-PYTHON" when reviewing Python-specific patterns
