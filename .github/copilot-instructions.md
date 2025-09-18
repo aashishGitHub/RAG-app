@@ -4,7 +4,6 @@ applyTo: "**"
 # Code Review Instructions
 
 ## General Guidelines
-- All code reviews must be provided in German
 - Focus on code quality, security, and best practices
 - Provide constructive feedback with specific suggestions
 
