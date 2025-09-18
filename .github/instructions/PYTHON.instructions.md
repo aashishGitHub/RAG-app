@@ -1,5 +1,6 @@
 ---
-applyTo: "**/*.py"
+applyTo:
+  - "**/*.py"
 ---
 
 # Python Code Review Instructions
