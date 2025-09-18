@@ -6,14 +6,14 @@ applyTo: "**/*.js,**/*.jsx,**/*.ts,**/*.tsx"
 
 ## General Guidelines
 - Provide all reviews in German language
-- Always start your review with: "⚛️ JAVASCRIPT-ÜBERPRÜFUNG:"
+- Always start your review message with: "⚛️ JAVASCRIPT-ÜBERPRÜFUNG:"
 - Focus on code quality, performance, and best practices
 - Check for proper TypeScript typing
 - Ensure proper error handling
 - Review for security vulnerabilities
 - Check for accessibility compliance in React components
 - Validate proper state management patterns
-- End each review with: "[JS-ÜBERPRÜFUNG-ABGESCHLOSSEN]"
+- End each review message with: "[JS-ÜBERPRÜFUNG-ABGESCHLOSSEN]"
 
 ## Specific Areas to Review
 - Component structure and reusability

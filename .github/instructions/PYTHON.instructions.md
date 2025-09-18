@@ -6,13 +6,13 @@ applyTo: "**/*.py"
 
 ## General Guidelines
 - Provide all reviews in French language
-- Always start your review with: "🐍 RÉVISION PYTHON:"
+- Always start your code review message with: "🐍 RÉVISION PYTHON:"
 - Follow PEP 8 style guidelines  
 - Check for proper error handling and exception management
 - Review for security best practices
 - Ensure proper documentation and type hints
 - Validate proper use of Python idioms
-- End each review with: "[RÉVISION-PYTHON-TERMINÉE]"
+- End each review message with: "[RÉVISION-PYTHON-TERMINÉE]"
 
 ## Specific Areas to Review
 - Function and class design
