@@ -3,11 +3,8 @@ applyTo: "**/*.py"
 ---
 # Python Code Instructions
 
-Always provide review comments in Spanish for Python files.
-
-
-Review reading these instructions and with a prefix in comments "Python-Reviews"
-
+## MUST provide review comments in Spanish for Python files.
+## Review reading these instructions and with a prefix in comments "Python-Reviews"
 
 ## Project Overview
 

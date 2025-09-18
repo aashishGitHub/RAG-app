@@ -1,6 +1,4 @@
-
 ---
-
 applyTo: "**/*.js,**/*.jsx"
 ---
 # UI Code Instructions
@@ -8,6 +6,6 @@ applyTo: "**/*.js,**/*.jsx"
 ## Introduction
 
 
-When performing a code review for js and jsx files, respond in French.
+## When performing a code review for js and jsx files, respond in French.
 
-Review reading these instructions and with a prefix in comments "UI-Reviews"
+## Review reading these instructions and with a prefix in comments "UI-Reviews"
