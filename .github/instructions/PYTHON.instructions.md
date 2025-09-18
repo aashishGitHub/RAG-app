@@ -5,6 +5,10 @@ applyTo: "**/*.py"
 
 Always provide review comments in Spanish for Python files.
 
+
+Review reading these instructions and with a prefix in comments "Python-Reviews"
+
+
 ## Project Overview
 
 This Python module supports the RAG Chat Application with utilities for document processing, analytics, and database operations. Focus on data science best practices, performance optimization, and integration with the existing Node.js backend.
