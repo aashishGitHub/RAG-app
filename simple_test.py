@@ -10,4 +10,4 @@ class BadClass:
     
     def process(self):
         # No error handling, missing return type
-        pass
+        pass# Test change to trigger new review
