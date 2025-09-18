@@ -11,3 +11,4 @@ class BadClass:
     def process(self):
         # No error handling, missing return type
         pass# Test change to trigger new review
+# Testing main copilot-instructions.md file
