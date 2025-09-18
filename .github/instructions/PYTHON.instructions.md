@@ -5,8 +5,8 @@ applyTo: "**/*.py"
 # Python Code Review Instructions
 
 ## General Guidelines
-- Provide reviews in German
-- Always start your review with: "🐍 PYTHON-SPEZIFISCHE ÜBERPRÜFUNG:"
+- Provide reviews in French
+## Always start your review with: "🐍 PYTHON:"
 - Follow PEP 8 style guidelines  
 - Check for proper error handling and exception management
 - Review for security best practices
