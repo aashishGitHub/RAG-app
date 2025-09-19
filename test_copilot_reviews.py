@@ -9,6 +9,7 @@ the respective instruction files.
 
 import os
 import json
+import requests
 from typing import List, Dict, Optional
 from dataclasses import dataclass
 
@@ -44,6 +45,20 @@ def read_config_file(filename):
     return data
 
 
+def unsafe_api_call(url):
+    # Security issue - no validation, hardcoded secrets
+    api_key = "sk-1234567890abcdef"  # Hardcoded API key - bad practice
+    response = requests.get(url, headers={"Authorization": f"Bearer {api_key}"})
+    return response.json()  # No error handling
+
+
+def process_file_path(user_input):
+    # Path traversal vulnerability
+    file_path = "/data/" + user_input
+    with open(file_path, 'r') as f:
+        return f.read()
+
+
 class DataProcessor:
     """Simple data processor class."""
     
@@ -51,6 +66,7 @@ class DataProcessor:
         # Missing type hints
         self.config = self.load_config(config_path)
         self.processed_count = 0
+        self.password = "admin123"  # Hardcoded password
     
     def load_config(self, path):
         # No error handling
@@ -69,29 +85,62 @@ class DataProcessor:
             results.append(processed_item)
             self.processed_count += 1
         return results
+    
+    def execute_sql(self, query, params):
+        # SQL injection vulnerability - no parameterized queries
+        sql = f"SELECT * FROM users WHERE name = '{params['name']}'"
+        # Simulated database execution
+        print(f"Executing: {sql}")
+        return []
+
+
+def inefficient_data_processing():
+    # Bad performance patterns
+    data = []
+    for i in range(10000):
+        # Inefficient string concatenation
+        result = ""
+        for j in range(100):
+            result = result + str(j)  # Should use join()
+        data.append(result)
+    return data
 
 
 def main():
     """Main function to test various patterns."""
-    # Test data
+    # Test data with bare except clause
     sample_users = [
         {"name": "John", "email": "john@example.com", "age": 30},
         {"name": "Jane", "email": "jane@example.com", "age": 25}
     ]
     
-    # Test function calls
-    users = process_user_data(sample_users)
-    print(f"Processed {len(users)} users")
-    
-    # Test potential error
+    # Test function calls with poor exception handling
     try:
-        avg = calculate_average([1, 2, 3, 4, 5])
+        users = process_user_data(sample_users)
+        print(f"Processed {len(users)} users")
+    except:  # Bare except clause - bad practice
+        pass
+    
+    # Test potential error with empty list
+    try:
+        avg = calculate_average([])  # Will cause division by zero
         print(f"Average: {avg}")
     except Exception as e:
         print(f"Error: {e}")
     
-    # Test class usage
-    processor = DataProcessor("config.json")  # This will fail but tests error handling
+    # Test security vulnerabilities
+    try:
+        data = unsafe_api_call("https://api.example.com/data")
+        file_content = process_file_path("../../../etc/passwd")
+    except:
+        pass
+    
+    # Test class usage with SQL injection
+    processor = DataProcessor("config.json")
+    processor.execute_sql("SELECT", {"name": "'; DROP TABLE users; --"})
+    
+    # Test inefficient processing
+    inefficient_data_processing()
     
     print("Test completed!")
 
