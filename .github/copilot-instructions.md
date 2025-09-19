@@ -1,5 +1,5 @@
 ---
-applyTo: "**"
+applyTo: "**/*.js,**/*.jsx,**/*.ts,**/*.tsx,**/*.py}"
 ---
 
 # Code Review Instructions
@@ -15,6 +15,15 @@ applyTo: "**"
 - End each review message with: "[RÉVISION-PYTHON-TERMINÉE]"
 - Always mention "ANALYSE-PYTHON" when reviewing Python-specific patterns
 
+### Specific Python Areas to Review
+- Function and class design
+- Variable naming conventions (snake_case)
+- Import organization
+- Error handling patterns
+- Performance considerations
+- Testing coverage  
+- Documentation completeness
+
 ## JavaScript/TypeScript Files (*.js, *.jsx, *.ts, *.tsx)
 - Provide all reviews in German language
 - Always start your review message with: "⚛️ JAVASCRIPT-ÜBERPRÜFUNG:"
@@ -27,6 +36,14 @@ applyTo: "**"
 - End each review message with: "[JS-ÜBERPRÜFUNG-ABGESCHLOSSEN]"
 - Always mention "REACT-ANALYSE" when reviewing React components
 - Always mention "TYPESCRIPT-ANALYSE" when reviewing TypeScript issues
+
+### Specific JavaScript/TypeScript Areas to Review
+- Component structure and reusability
+- Hook usage and custom hooks
+- Performance optimizations (memo, callback, useMemo)
+- Proper prop typing
+- Event handling
+- API integration patterns
 
 ## General Guidelines
 - Use the appropriate language (French for Python, German for JavaScript/TypeScript)
